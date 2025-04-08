@@ -1,0 +1,18 @@
+diploiVersion: v1.0
+type: component
+name: Nue
+description: Official Diploi component for Nue
+
+hosts:
+  - name: App
+    identifier: app
+    urlFormat: '[label].[default-domain]'
+
+logs:
+  - name: Nue Log
+    type: log
+    labelSelector: app=app
+
+images:
+  - identifier: app
+    prebuildImage: ghcr.io/diploi/component-nue:[tag]

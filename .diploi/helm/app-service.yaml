@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app
+spec:
+  ports:
+    - port: {{ ternary 8083 80 (eq .Values.stage "development") }}
+      name: app
+  selector:
+    app: app
