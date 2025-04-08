@@ -15,8 +15,6 @@ EXPOSE 3000/tcp
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-RUN which bun
-RUN which nue
-RUN $HOME/.bun/bin/nue -v
+RUN /usr/local/bin/nue -v
 
 CMD ["$HOME/.bun/bin/nue"]
