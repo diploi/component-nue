@@ -8,12 +8,12 @@ ARG FOLDER
 FROM base AS build
 
 ENV NODE_ENV=production
-RUN bun install --global nuekit
 
 COPY . /app
 WORKDIR ${FOLDER}
 
-RUN nue build --production
+RUN bun install --frozen-lockfile
+RUN bun run build
 
 # Production image, copy all the built files
 FROM nginx:1.27.2-alpine AS runner

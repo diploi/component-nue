@@ -3,17 +3,15 @@ FROM oven/bun:1.2-slim AS base
 # This will be set by the GitHub action to the folder containing this component.
 ARG FOLDER=/app
 
-ENV NODE_ENV=development
-RUN bun install --global nuekit
-
 COPY . /app
 WORKDIR ${FOLDER}
 
-RUN $BUN_INSTALL_BIN/nue -v
-RUN nue -v
+ENV NODE_ENV=development
+
+USER 1000:1000
 
 EXPOSE 3000/tcp
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-CMD ["$BUN_INSTALL_BIN/nue"]
+ENTRYPOINT ["bun", "dev"]

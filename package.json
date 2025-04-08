@@ -1,0 +1,11 @@
+{
+  "name": "component-nue",
+  "scripts": {
+    "dev": "nue",
+    "build": "nue build --production"
+  },
+  "devDependencies": {
+    "nuekit": "^1.0.0-RC.3"
+  },
+  "private": true
+}
