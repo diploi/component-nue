@@ -20,8 +20,7 @@ COPY . /app
 WORKDIR ${FOLDER}
 
 USER 1000:1000
-RUN $BUN_INSTALL_BIN/nue -v
-RUN nue -v
+RUN bunx nue -v
 
 EXPOSE 3000/tcp
 ENV PORT=3000
