@@ -11,6 +11,8 @@ RUN chown -R 1000:1000 $BUN_INSTALL_BIN/nue
 RUN chmod -R a+rwx $BUN_INSTALL_BIN
 RUN chmod -R a+rwx $BUN_INSTALL_BIN/nue
 
+RUN cd $BUN_INSTALL_BIN && ls -la
+
 COPY . /app
 WORKDIR ${FOLDER}
 
