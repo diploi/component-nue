@@ -11,7 +11,7 @@ RUN chown -R 1000:1000 $BUN_INSTALL_BIN/nue
 RUN chmod -R a+rwx $BUN_INSTALL_BIN
 RUN chmod -R a+rwx $BUN_INSTALL_BIN/nue
 
-RUN chown -R /root/.bun/install/global/node_modules/
+RUN chown -R 1000:1000 /root/.bun/install/global/node_modules/
 
 RUN cd $BUN_INSTALL_BIN && ls -la
 RUN cd /root/.bun/install/global/node_modules/ && ls -la
