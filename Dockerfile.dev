@@ -4,26 +4,15 @@ FROM oven/bun:1.2-slim AS base
 ARG FOLDER=/app
 
 ENV NODE_ENV=development
-RUN bun install --global nuekit
-
-RUN chown -R 1000:1000 $BUN_INSTALL_BIN
-RUN chown -R 1000:1000 $BUN_INSTALL_BIN/nue
-RUN chmod -R a+rwx $BUN_INSTALL_BIN
-RUN chmod -R a+rwx $BUN_INSTALL_BIN/nue
-
-RUN chown -R 1000:1000 /root/.bun/install/global/node_modules/
-
-RUN cd $BUN_INSTALL_BIN && ls -la
-RUN cd /root/.bun/install/global/node_modules/ && ls -la
+#RUN bun install --global nuekit
 
 COPY . /app
 WORKDIR ${FOLDER}
 
-USER 1000:1000
 RUN bunx nue -v
 
 EXPOSE 3000/tcp
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-CMD ["$HOME/.bun/bin/nue"]
+CMD ["bunx nue"]
