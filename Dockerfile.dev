@@ -7,6 +7,9 @@ ENV NODE_ENV=development
 RUN bun install --global nuekit
 
 RUN chown -R 1000:1000 $BUN_INSTALL_BIN
+RUN chown -R 1000:1000 $BUN_INSTALL_BIN/nue
+RUN chmod -R a+rwx $BUN_INSTALL_BIN
+RUN chmod -R a+rwx $BUN_INSTALL_BIN/nue
 
 COPY . /app
 WORKDIR ${FOLDER}
