@@ -15,4 +15,4 @@ EXPOSE 3000/tcp
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-ENTRYPOINT ["$HOME/.bun/bin/nue"]
+CMD ["$HOME/.bun/bin/nue"]
