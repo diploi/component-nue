@@ -18,4 +18,4 @@ RUN nue build --production
 FROM nginx:1.27.2-alpine AS runner
 ARG FOLDER
 
-COPY --from=build --exclude=Dockerfile --exclude=Dockerfile.dev --exclude=diploi.yaml ${FOLDER}/.dist/prod /usr/share/nginx/html
+COPY --from=build ${FOLDER}/.dist/prod /usr/share/nginx/html
