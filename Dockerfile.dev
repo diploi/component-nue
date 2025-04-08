@@ -4,15 +4,16 @@ FROM oven/bun:1.2-slim AS base
 ARG FOLDER=/app
 
 ENV NODE_ENV=development
-#RUN bun install --global nuekit
+RUN bun install --global nuekit
 
 COPY . /app
 WORKDIR ${FOLDER}
 
-RUN bunx nue -v
+RUN $BUN_INSTALL_BIN/nue -v
+RUN nue -v
 
 EXPOSE 3000/tcp
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-CMD ["bunx nue"]
+CMD ["$BUN_INSTALL_BIN/nue"]
