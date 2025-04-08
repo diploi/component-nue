@@ -6,7 +6,7 @@ ARG FOLDER=/app
 ENV NODE_ENV=development
 RUN bun install --global nuekit
 
-RUN sudo chown -R 1000:1000 $BUN_INSTALL_BIN
+RUN chown -R 1000:1000 $BUN_INSTALL_BIN
 
 COPY . /app
 WORKDIR ${FOLDER}
