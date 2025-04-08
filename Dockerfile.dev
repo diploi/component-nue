@@ -4,13 +4,14 @@ FROM oven/bun:1.2-slim AS base
 ARG FOLDER=/app
 
 ENV NODE_ENV=development
-USER 1000:1000
-
 RUN bun install --global nuekit
+
+RUN chmod -R a+rwx $BUN_INSTALL_BIN
 
 COPY . /app
 WORKDIR ${FOLDER}
 
+USER 1000:1000
 RUN $BUN_INSTALL_BIN/nue -v
 RUN nue -v
 
