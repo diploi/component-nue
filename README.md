@@ -2,6 +2,10 @@
 
 # Nue Component for Diploi
 
+[![launch with diploi badge](https://diploi.com/launch.svg)](https://diploi.com/component/nue)
+[![component on diploi badge](https://diploi.com/component.svg)](https://diploi.com/component/nue)
+[![latest tag badge](https://badgen.net/github/tag/diploi/component-nue)](https://diploi.com/component/nue)
+
 Uses the official [oven/bun](https://hub.docker.com/r/oven/bun) Docker image for development,  
 and an optimised [nginx](https://hub.docker.com/_/nginx) image for production.
 
