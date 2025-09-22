@@ -39,7 +39,7 @@ spec:
           image: {{ .Values.images.app }}
           imagePullPolicy: Always
           command: ['bun', 'install']
-          workingDir: /app/{{ .Values.identifier }}
+          workingDir: /app{{ .Values.folder }}
           volumeMounts:
             - name: app-mount
               mountPath: /app
@@ -56,7 +56,7 @@ spec:
             limits:
               memory: 1000Mi
           {{- if eq .Values.stage "development" }}
-          workingDir: /app/{{ .Values.identifier }}
+          workingDir: /app{{ .Values.folder }}
           {{- end }}
           env:
             {{- range .Values.env }}
