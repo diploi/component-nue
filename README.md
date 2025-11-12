@@ -37,5 +37,6 @@ Will build a production ready image. Image runs `bun install` & `bun run build` 
 
 ## Links
 
+- [Adding Nue.js to a project](https://docs.diploi.com/building/components/nue)
 - [Nue documentation](https://nuejs.org/docs/)
 - [Bun documentation](https://bun.sh/docs)
