@@ -3,16 +3,13 @@ type: component
 name: Nue
 description: Official Diploi component for Nue
 
+supportsAdditionalHosts: { serviceName: 'app'}
+
 hosts:
   - name: App
     identifier: app
-    urlFormat: '[label].[default-domain]'
-
-logs:
-  - name: Nue Log
-    type: log
-    labelSelector: app=app
+    port: 8083
 
 images:
   - identifier: app
-    prebuildImage: ghcr.io/diploi/component-nue:[tag]
+    prebuildImage: public.ecr.aws/p8t2q7f4/diploi/component-nue:[tag]
